@@ -23,7 +23,10 @@
     --z-fixed: 1;
 }
 
-/* animation */
+/* ========================= */
+/* ANIMATION */
+/* ========================= */
+
 @keyframes spin{
     0%{
         transform: rotate(0deg);
@@ -46,10 +49,14 @@
 /* GLOBAL */
 /* ========================= */
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     overflow-x: hidden;
     background-color: var(--primary);
-    scroll-behavior: smooth;
+    font-family: var(--fontDefaults);
 }
 
 *{
@@ -172,7 +179,6 @@ ul{
 
 .home_intro p{
     margin-top: 15px;
-    font-family: var(--fontDefaults);
     font-size: var(--nav-font-size);
     color: var(--silver);
     line-height: 1.8;
@@ -211,7 +217,6 @@ ul{
     box-shadow: 0 10px 30px rgba(251,180,101,0.15);
 }
 
-
 /* ========================= */
 /* PROJECT */
 /* ========================= */
@@ -236,6 +241,8 @@ ul{
     border-radius: 20px;
 }
 
+/* food app */
+
 .foodApp{
     position: relative;
 }
@@ -253,6 +260,8 @@ ul{
     margin-top: 400px;
 }
 
+/* furniture */
+
 .furniture{
     position: relative;
 }
@@ -261,6 +270,7 @@ ul{
     margin-top: 150px;
     max-width: 938px;
     border-radius: 14px;
+    display: block;
 }
 
 .furniture a p{
@@ -268,7 +278,6 @@ ul{
     padding-right: 3rem;
     float: right;
     color: var(--secondary);
-    font-family: var(--fontDefaults);
     font-weight: 500;
     font-size: 1.2rem;
 }
@@ -280,6 +289,8 @@ ul{
     opacity: 0.5;
 }
 
+/* femora */
+
 .femoraApp{
     position: relative;
     margin-top: 120px;
@@ -289,7 +300,6 @@ ul{
 .femoraApp img{
     margin-top: 50px;
     max-width: 937px;
-   
     border-radius: 14px;
     display: block;
 }
@@ -307,7 +317,6 @@ ul{
 
 .skills{
     padding: 120px 0;
-    min-height: auto;
 }
 
 .skills h1{
@@ -321,7 +330,6 @@ ul{
     margin: 10px auto 0;
 }
 
-/* icon wrapper */
 .programming,
 .design{
     margin-top: 60px;
@@ -332,7 +340,6 @@ ul{
     gap: 28px;
 }
 
-/* icon style */
 .programming img,
 .design img{
     width: 70px;
@@ -346,7 +353,6 @@ ul{
     cursor: pointer;
 }
 
-/* hover */
 .programming img:hover,
 .design img:hover{
     transform: translateY(-8px);
@@ -361,7 +367,6 @@ ul{
 
 .contact{
     padding: 120px 0 80px;
-    min-height: auto;
     position: relative;
 }
 
@@ -373,7 +378,6 @@ ul{
 
 .contact p{
     margin-top: 30px;
-    font-family: var(--fontDefaults);
     font-size: var(--normal-font-size);
     color: var(--silver);
     max-width: 700px;
@@ -389,7 +393,6 @@ ul{
     color: var(--secondary);
 }
 
-/* social wrapper */
 .contact_social{
     margin-top: 40px;
     display: flex;
@@ -399,7 +402,6 @@ ul{
     flex-wrap: wrap;
 }
 
-/* social button */
 .contact_social a{
     width: 60px;
     height: 60px;
@@ -425,7 +427,6 @@ ul{
     box-shadow: 0 10px 30px rgba(251,180,101,0.15);
 }
 
-/* background logo */
 .contact_social .signed_logo{
     position: absolute;
     right: 0;
@@ -435,7 +436,6 @@ ul{
     z-index: -1;
 }
 
-/* copyright */
 .copyright{
     margin-top: 50px;
 }
@@ -457,6 +457,7 @@ ul{
     }
 
     /* navbar */
+
     .navbar{
         padding-right: 20px;
         padding-left: 20px;
@@ -491,11 +492,25 @@ ul{
     }
 
     /* home */
+
+    .home{
+        padding: 120px 0 80px;
+    }
+
+    .home_photo{
+        text-align: center;
+    }
+
+    .home_photo img{
+        max-width: 320px;
+    }
+
     .home_photo .circle{
         height: 315px;
         width: 315px;
         top: -2%;
-        left: 5%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .home_photo .circle::before{
@@ -504,6 +519,11 @@ ul{
         left: 7%;
         top: 10%;
         transform-origin: 130px 130px;
+    }
+
+    .home_intro{
+        margin-top: 40px;
+        text-align: center;
     }
 
     .home_intro h1{
@@ -519,8 +539,8 @@ ul{
         font-size: 0.95rem;
     }
 
-    /* home social*/
-     .home_social{
+    .home_social{
+        justify-content: center;
         gap: 14px;
     }
 
@@ -533,41 +553,67 @@ ul{
         width: 24px;
         height: 24px;
     }
-    
+
     /* project */
-    .foodApp img{
-        max-width: 100%;
-        margin-right: 0;
+
+    .project{
+        padding: 80px 0;
     }
 
-    .foodApp .component1,
-    .furniture .component2{
-        display: none;
+    .project h1{
+        text-align: center;
+    }
+
+    .line{
+        margin: 10px auto 0;
+    }
+
+    .foodApp img,
+    .furniture img,
+    .femoraApp img{
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0;
+        border-radius: 14px;
+        display: block;
+    }
+
+    .foodApp img{
+        margin-top: 50px;
     }
 
     .furniture img{
-        max-width: 100%;
-        margin-right: 0;
+        margin-top: 80px;
+    }
+
+    .femoraApp img{
+        margin-top: 50px;
+    }
+
+    .foodApp .component1,
+    .furniture .component2,
+    .femoraApp .component2{
+        display: none;
+    }
 
     .furniture a p{
         float: left;
         margin-top: 2rem;
         margin-left: 1rem;
+        padding-right: 0;
+        font-size: 1rem;
     }
 
-        .femoraApp{
+    .femoraApp{
         margin-top: 80px;
     }
 
-    .femoraApp img{
-        max-width: 100%;
-        margin-right: 0;
+    /* skills */
+
+    .skills{
+        padding: 80px 0;
     }
 
-    .femoraApp .component2{
-        display: none;
-    }
-    /* skills */
     .programming,
     .design{
         gap: 16px;
@@ -582,16 +628,23 @@ ul{
     }
 
     /* contact */
+
     .contact{
-        padding-bottom: 100px;
+        padding: 80px 0 100px;
+    }
+
+    .contact h1{
+        text-align: center;
     }
 
     .contact p{
         font-size: 0.95rem;
         line-height: 1.7;
+        text-align: center;
     }
 
     .contact_social{
+        justify-content: center;
         gap: 14px;
     }
 
@@ -609,5 +662,9 @@ ul{
         width: 180px;
         bottom: -30px;
         right: 0;
+    }
+
+    .copyright p{
+        text-align: center;
     }
 }
