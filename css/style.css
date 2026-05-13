@@ -220,7 +220,6 @@ ul{
 /* ========================= */
 /* PROJECT */
 /* ========================= */
-
 .project{
     padding-bottom: 150px;
     min-height: 100vh;
@@ -343,6 +342,7 @@ ul{
     margin-top: 170px;
     margin-right: 20px;
 }
+/* end project */
 
 /* ========================= */
 /* SKILLS */
@@ -417,11 +417,21 @@ ul{
     line-height: 1.8;
 }
 
+.contact p > span{
+    font-weight: 600;
+}
+
+.contact p > span > a{
+    text-decoration: none;
+    color: var(--secondary);
+}
+
 .contact_social{
     margin-top: 40px;
     display: flex;
     align-items: center;
     gap: 20px;
+    position: relative;
     flex-wrap: wrap;
 }
 
@@ -450,6 +460,25 @@ ul{
     box-shadow: 0 10px 30px rgba(251,180,101,0.15);
 }
 
+.contact_social .signed_logo{
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 420px;
+    opacity: 0.08;
+    z-index: -1;
+}
+
+.copyright{
+    margin-top: 50px;
+}
+
+.copyright p{
+    font-weight: 500;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
 /* ========================= */
 /* MOBILE */
 /* ========================= */
@@ -475,6 +504,18 @@ ul{
         background: var(--silver);
         display: block;
         cursor: pointer;
+    }
+
+    .navbar-toggler.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .navbar-toggler.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggler.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
     }
 
     .navbar-collapse{
@@ -520,25 +561,36 @@ ul{
 
     .home_intro h1{
         font-size: calc(var(--heading1) * 0.9);
+        margin-top: 20px;
     }
 
     .home_intro h2{
         font-size: calc(var(--heading2) * 0.9);
     }
 
-    .home_social{
-        justify-content: center;
+    .home_intro p{
+        font-size: 0.95rem;
     }
 
-    /* ========================= */
-    /* PROJECT MOBILE */
-    /* ========================= */
+    .home_social{
+        justify-content: center;
+        gap: 14px;
+    }
 
-    @media screen and (max-width: 768px){
+    .home_social a{
+        width: 52px;
+        height: 52px;
+    }
+
+    .home_social a img{
+        width: 24px;
+        height: 24px;
+    }
+
+    /* project */
 
     .project{
-        padding-top: 90px;
-        padding-bottom: 100px;
+        padding: 80px 0;
     }
 
     .project h1{
@@ -549,70 +601,103 @@ ul{
         margin: 10px auto 0;
     }
 
-    /* container project */
-
-    .foodApp,
-    .furniture,
-    .femoraApp,
-    .expertSystem,
-    .machineLearning{
-        margin-top: 60px;
-        position: relative;
-    }
-
-    /* gambar project */
-
     .foodApp img,
     .furniture img,
-    .femoraApp img,
-    .expertSystem img,
-    .machineLearning img{
-        width: 100%;
+    .expertSystem img{
         max-width: 100%;
-        height: auto;
+        width: 100%;
+        margin-right: 0;
+        border-radius: 14px;
         display: block;
-        margin: 0 auto;
-        border-radius: 22px;
-        float: none;
-        object-fit: cover;
     }
-
-    /* spacing antar project */
 
     .foodApp img{
-        margin-top: 40px;
+        margin-top: 50px;
     }
 
-    .furniture img,
-    .femoraApp img,
-    .expertSystem img,
-    .machineLearning img{
-        margin-top: 70px;
+    .furniture img{
+        margin-top: 80px;
     }
 
-    /* hilangkan dekorasi */
+    .expertSystem img{
+        margin-top: 50px;
+    }
 
-    .component1,
-    .component2,
-    .component3,
-    .component4,
-    .description1,
-    .description2{
+    .foodApp .component1,
+    .furniture .component2,
+    .expertSystem .component2{
         display: none;
     }
 
-    /* text project */
-
-    .furniture a p,
-    .expertSystem p,
-    .machineLearning p{
-        float: none;
-        text-align: center;
-        margin: 20px auto 0;
-        padding: 0;
+    .furniture a p{
+        float: left;
+        margin-top: 2rem;
+        margin-left: 1rem;
+        padding-right: 0;
         font-size: 1rem;
-        color: var(--secondary);
     }
 
-}
+    .expertSystem{
+        margin-top: 80px;
+    }
+
+    /* skills */
+
+    .skills{
+        padding: 80px 0;
+    }
+
+    .programming,
+    .design{
+        gap: 16px;
+        margin-top: 40px;
+    }
+
+    .programming img,
+    .design img{
+        width: 58px;
+        height: 58px;
+        padding: 12px;
+    }
+
+    /* contact */
+
+    .contact{
+        padding: 80px 0 100px;
+    }
+
+    .contact h1{
+        text-align: center;
+    }
+
+    .contact p{
+        font-size: 0.95rem;
+        line-height: 1.7;
+        text-align: center;
+    }
+
+    .contact_social{
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .contact_social a{
+        width: 52px;
+        height: 52px;
+    }
+
+    .contact_social a img{
+        width: 24px;
+        height: 24px;
+    }
+
+    .contact_social .signed_logo{
+        width: 180px;
+        bottom: -30px;
+        right: 0;
+    }
+
+    .copyright p{
+        text-align: center;
+    }
 }
