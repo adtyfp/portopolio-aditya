@@ -220,17 +220,22 @@ ul{
 /* ========================= */
 /* PROJECT */
 /* ========================= */
+
 .project{
     padding-bottom: 150px;
     min-height: 100vh;
     padding-top: 100px;
+    /* FIX: cegah horizontal overflow akibat jarallax element */
+    overflow-x: hidden;
 }
+
 .project h1{
     font-family: var(--fontLogo);
     font-weight: 500;
     font-size: var(--heading1);
     color: var(--silver);
 }
+
 .line{
     margin-top: -5px;
     width: 96px;
@@ -246,20 +251,27 @@ ul{
     float: right;
     border-radius: 10px;
 }
+
 .foodApp{
     position: relative;
 }
+
+/* FIX: component1, 2, 3 pakai position: absolute agar tidak mendorong layout */
 .foodApp .component1{
     position: absolute;
     z-index: -1;
     margin-top: 400px;
+    pointer-events: none; /* FIX: tidak menghalangi interaksi scroll */
+    will-change: transform;  /* FIX: hint ke browser agar pakai GPU, lebih smooth */
 }
+
 .furniture img{
     margin-top: 150px;
     max-height: 572px;
     max-width: 938.42px;
     border-radius: 10px;
 }
+
 .furniture a p{
     margin-top: 25rem;
     padding-right: 3rem;
@@ -269,17 +281,23 @@ ul{
     font-weight: 500;
     font-size: 1.2rem;
 }
+
 .furniture{
     position: relative;
 }
+
 .furniture .component2{
     margin-top: -210px;
     z-index: -1;
     float: right;
+    pointer-events: none; /* FIX */
+    will-change: transform; /* FIX */
 }
+
 .expertSystem{
     position: relative;
 }
+
 .expertSystem img{
     margin-top: 70px;
     max-height: 445px;
@@ -287,11 +305,17 @@ ul{
     float: right;
     border-radius: 10px;
 }
+
+/* FIX: component3 absolute agar tidak push layout */
 .expertSystem .component3{
+    position: absolute;
     float: left;
     margin-top: -230px;
     z-index: -1;
+    pointer-events: none; /* FIX */
+    will-change: transform; /* FIX */
 }
+
 .description1{
     height: 209px;
     width: 10px;
@@ -299,6 +323,7 @@ ul{
     z-index: 1;
     margin-top: 180px;
 }
+
 .expertSystem p{
     font-weight: 700;
     font-family: var(--fontDefaults);
@@ -309,20 +334,28 @@ ul{
     margin-top: -190px;
     margin-left: 20px;
 }
+
 .machineLearning{
     position: relative;
 }
+
 .machineLearning img{
     margin-top: 70px;
     max-height: 445px;
     max-width: 826.77px;
     border-radius: 10px;
 }
+
 .machineLearning .component4{
+    position: absolute; /* FIX: absolute agar tidak push layout */
+    right: 0;
     float: right;
     margin-top: -220px;
     z-index: -1;
+    pointer-events: none; /* FIX */
+    will-change: transform; /* FIX */
 }
+
 .description2{
     height: 245px;
     width: 10px;
@@ -331,6 +364,7 @@ ul{
     float: right;
     margin-top: 170px;
 }
+
 .machineLearning p{
     font-weight: 700;
     font-family: var(--fontDefaults);
@@ -342,7 +376,6 @@ ul{
     margin-top: 170px;
     margin-right: 20px;
 }
-/* end project */
 
 /* ========================= */
 /* SKILLS */
@@ -631,11 +664,18 @@ ul{
         border-radius: 14px;
     }
 
+    /* FIX: di mobile, semua component decoration disembunyikan */
+    /* sekaligus menghilangkan jarallax-element di mobile agar tidak bounce */
     .foodApp .component1,
     .furniture .component2,
     .expertSystem .component3,
     .machineLearning .component4{
         display: none;
+    }
+
+    /* FIX: paksa reset transform dari jarallax di mobile */
+    [data-jarallax-element]{
+        transform: none !important;
     }
 
     .description1,
