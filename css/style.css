@@ -485,11 +485,20 @@ ul{
 
 @media screen and (max-width: 768px){
 
+    html,
     body{
-        margin: 0;
+        overflow-x: hidden;
+        width: 100%;
+        scroll-behavior: smooth;
     }
 
-    /* navbar */
+    body{
+        position: relative;
+    }
+
+    /* ========================= */
+    /* NAVBAR */
+    /* ========================= */
 
     .navbar{
         padding-right: 20px;
@@ -519,15 +528,24 @@ ul{
     }
 
     .navbar-collapse{
-        margin-left: -45px;
+        margin-left: 0;
         margin-top: 20px;
         margin-bottom: 10px;
     }
 
-    /* home */
+    .navbar .nav-item{
+        margin-left: 0;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* ========================= */
+    /* HOME */
+    /* ========================= */
 
     .home{
-        padding: 120px 0 80px;
+        padding: 120px 20px 80px;
+        min-height: auto;
     }
 
     .home_photo{
@@ -535,23 +553,20 @@ ul{
     }
 
     .home_photo img{
-        max-width: 320px;
+        max-width: 280px;
+        width: 100%;
     }
 
     .home_photo .circle{
-        height: 315px;
-        width: 315px;
-        top: -2%;
+        width: 280px;
+        height: 280px;
         left: 50%;
         transform: translateX(-50%);
+        top: 0;
     }
 
     .home_photo .circle::before{
-        height: 35px;
-        width: 35px;
-        left: 7%;
-        top: 10%;
-        transform-origin: 130px 130px;
+        transform-origin: 115px 115px;
     }
 
     .home_intro{
@@ -560,16 +575,16 @@ ul{
     }
 
     .home_intro h1{
-        font-size: calc(var(--heading1) * 0.9);
-        margin-top: 20px;
+        font-size: 2rem;
     }
 
     .home_intro h2{
-        font-size: calc(var(--heading2) * 0.9);
+        font-size: 1.4rem;
     }
 
     .home_intro p{
         font-size: 0.95rem;
+        line-height: 1.7;
     }
 
     .home_social{
@@ -577,20 +592,14 @@ ul{
         gap: 14px;
     }
 
-    .home_social a{
-        width: 52px;
-        height: 52px;
-    }
-
-    .home_social a img{
-        width: 24px;
-        height: 24px;
-    }
-
-    /* project */
+    /* ========================= */
+    /* PROJECT */
+    /* ========================= */
 
     .project{
-        padding: 80px 0;
+        padding: 80px 20px;
+        min-height: auto;
+        overflow: hidden;
     }
 
     .project h1{
@@ -601,50 +610,55 @@ ul{
         margin: 10px auto 0;
     }
 
+    .foodApp,
+    .furniture,
+    .expertSystem,
+    .machineLearning{
+        width: 100%;
+        overflow: hidden;
+    }
+
     .foodApp img,
     .furniture img,
-    .expertSystem img{
-        max-width: 100%;
+    .expertSystem img,
+    .machineLearning img{
         width: 100%;
-        margin-right: 0;
-        border-radius: 14px;
+        max-width: 100%;
+        height: auto;
         display: block;
-    }
-
-    .foodApp img{
         margin-top: 50px;
-    }
-
-    .furniture img{
-        margin-top: 80px;
-    }
-
-    .expertSystem img{
-        margin-top: 50px;
+        float: none;
+        border-radius: 14px;
     }
 
     .foodApp .component1,
     .furniture .component2,
-    .expertSystem .component2{
+    .expertSystem .component3,
+    .machineLearning .component4{
         display: none;
     }
 
+    .description1,
+    .description2{
+        display: none;
+    }
+
+    .expertSystem p,
+    .machineLearning p,
     .furniture a p{
-        float: left;
-        margin-top: 2rem;
-        margin-left: 1rem;
-        padding-right: 0;
+        position: static;
+        float: none;
+        margin: 20px 0 0;
+        text-align: center;
         font-size: 1rem;
     }
 
-    .expertSystem{
-        margin-top: 80px;
-    }
-
-    /* skills */
+    /* ========================= */
+    /* SKILLS */
+    /* ========================= */
 
     .skills{
-        padding: 80px 0;
+        padding: 80px 20px;
     }
 
     .programming,
@@ -660,10 +674,13 @@ ul{
         padding: 12px;
     }
 
-    /* contact */
+    /* ========================= */
+    /* CONTACT */
+    /* ========================= */
 
     .contact{
-        padding: 80px 0 100px;
+        padding: 80px 20px 100px;
+        overflow: hidden;
     }
 
     .contact h1{
